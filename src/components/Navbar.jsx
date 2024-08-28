@@ -32,7 +32,7 @@ const Navbar = () => {
         <img
           src={assets.logo}
           className="w-36 cursor-pointer"
-          onClick={() => window.scrollBy(0, 0)}
+          onClick={() => window.scrollTo(0, 0)}
           alt=""
         />
         <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
@@ -77,53 +77,54 @@ const Navbar = () => {
           </Link>
           <img
             src="/menu.svg"
-            className="w-5 min-w-5 block sm:hidden z-10 cursor-pointer"
+            className="w-5 min-w-5 block sm:hidden  cursor-pointer"
             alt=""
             onClick={() => setToggle(!toggle)}
           />
         </div>
-      </div>
-      <div
-        className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-[#f4f4f4] transition-all z-99 ${
-          toggle ? "w-full" : "w-0"
-        }`}
-      >
-        <div className="flex flex-col text-gray-600">
-          <div
-            onClick={() => setToggle(!toggle)}
-            className="flex items-center cursor-pointer  bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 p-6"
-          >
-            <img src="/close.svg" alt="close icon" className="rotate-90" />
-            <p className="font-semibold">Back</p>
+
+        <div
+          className={`absolute h-[100vh] top-0 right-0 bottom-0 overflow-hidden bg-[#f4f4f4] transition-all  ${
+            toggle ? "w-full" : "w-0"
+          }`}
+        >
+          <div className="flex overflow-hidden flex-col text-gray-600">
+            <div
+              onClick={() => setToggle(!toggle)}
+              className="flex items-center cursor-pointer  bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 p-6"
+            >
+              <img src="/close.svg" alt="close icon" className="rotate-90" />
+              <p className="font-semibold">Back</p>
+            </div>
+            <NavLink
+              onClick={() => setToggle(!toggle)}
+              className={"py-2 pl-6 border"}
+              to="/"
+            >
+              HOME
+            </NavLink>
+            <NavLink
+              onClick={() => setToggle(!toggle)}
+              className={"py-2 pl-6 border"}
+              to="/collection"
+            >
+              COLLECTION
+            </NavLink>
+            <NavLink
+              onClick={() => setToggle(!toggle)}
+              className={"py-2 pl-6 border"}
+              to="/about"
+            >
+              ABOUT
+            </NavLink>
+            <NavLink
+              onClick={() => setToggle(!toggle)}
+              className={"py-2 pl-6 border"}
+              to="/contact"
+            >
+              CONTACT
+            </NavLink>
           </div>
-          <NavLink
-            onClick={() => setToggle(!toggle)}
-            className={"py-2 pl-6 border"}
-            to="/"
-          >
-            HOME
-          </NavLink>
-          <NavLink
-            onClick={() => setToggle(!toggle)}
-            className={"py-2 pl-6 border"}
-            to="/collection"
-          >
-            COLLECTION
-          </NavLink>
-          <NavLink
-            onClick={() => setToggle(!toggle)}
-            className={"py-2 pl-6 border"}
-            to="/about"
-          >
-            ABOUT
-          </NavLink>
-          <NavLink
-            onClick={() => setToggle(!toggle)}
-            className={"py-2 pl-6 border"}
-            to="/contact"
-          >
-            CONTACT
-          </NavLink>
         </div>
       </div>
     </>
