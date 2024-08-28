@@ -9,6 +9,7 @@
   font-optical-sizing: auto;
   font-style: normal;
   background-color: #fcfcf4;
+  box-sizing: border-box;
 }
 .prata-regular {
   font-family: "Prata", serif;
@@ -18,4 +19,11 @@
 
 a.active hr {
   display: block;
+}
+
+@media (max-width: 640px) {
+  a.active {
+    background-color: rgb(179, 171, 171);
+    color: #fcf4f4;
+  }
 }

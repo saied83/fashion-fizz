@@ -23,10 +23,10 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`flex sticky top-0 left-0 right-0 items-center justify-between py-5 font-medium px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] ${
+        className={`flex sticky z-10 top-0 mb-6 left-0 right-0 items-center justify-between py-5 font-medium px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] ${
           !scrolled
             ? "bg-[#f4f4f4] "
-            : " bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10"
+            : " bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30"
         } `}
       >
         <img
@@ -82,7 +82,7 @@ const Navbar = () => {
             onClick={() => setToggle(!toggle)}
           />
         </div>
-
+        {/* Mobile navbar view  */}
         <div
           className={`absolute h-[100vh] top-0 right-0 bottom-0 overflow-hidden bg-[#f4f4f4] transition-all  ${
             toggle ? "w-full" : "w-0"
