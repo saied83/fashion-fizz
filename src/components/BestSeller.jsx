@@ -12,7 +12,7 @@ const BestSeller = () => {
   }, []);
 
   return (
-    <div className="my-10 bg-[#f3f4f4]">
+    <div className="my-10 rounded-lg  border bg-[#f3f4f4]">
       <div className="text-center py-8 text-3xl">
         <Title text1={"BEST"} text2={"SELLERS"} />
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
