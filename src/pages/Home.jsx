@@ -1,12 +1,10 @@
+import Hero from "../components/Hero";
+
 const Home = () => {
   return (
-    <>
-      <div className="h-60 ">Home</div>
-      <div className="h-60 ">Home</div>
-      <div className="h-60 ">Home</div>
-      <div className="h-60 ">Home</div>
-      <div className="h-60 ">Home</div>
-    </>
+    <div>
+      <Hero />
+    </div>
   );
 };
 

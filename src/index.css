@@ -10,6 +10,11 @@
   font-style: normal;
   background-color: #fcfcf4;
 }
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 a.active hr {
   display: block;
