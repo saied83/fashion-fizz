@@ -14,7 +14,11 @@ const ShopContextProvider = ({ children }) => {
   const deliveryFee = 10;
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
-  const [cartItems, setCartItems] = useState({});
+  // const [cartItems, setCartItems] = useState(
+  //   localStorage.getItem("cart") || {}
+  // );
+
+  const cartItems = JSON.parse(localStorage.getItem("cart"));
   const navigate = useNavigate();
 
   const addToCart = async (itemId, size) => {
@@ -33,7 +37,8 @@ const ShopContextProvider = ({ children }) => {
       cartData[itemId] = {};
       cartData[itemId][size] = 1;
     }
-    setCartItems(cartData);
+    // setCartItems(cartData);
+    localStorage.setItem("cart", JSON.stringify(cartData));
     toast.success("Add To Cart Successfully!");
   };
   const getCartCount = () => {
@@ -55,7 +60,8 @@ const ShopContextProvider = ({ children }) => {
   const updateQuantity = (itemId, size, quantity) => {
     let cartData = structuredClone(cartItems);
     cartData[itemId][size] = quantity;
-    setCartItems(cartData);
+    // setCartItems(cartData);
+    localStorage.setItem("cart", JSON.stringify(cartData));
   };
 
   const getCartAmount = () => {
