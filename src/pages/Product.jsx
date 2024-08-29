@@ -24,7 +24,9 @@ const Product = () => {
 
   const handleCheckout = () => {
     if (getCartCount() === 0) {
-      toast.error("Request Abroad");
+      toast("Request Abroad", {
+        icon: "⚠️",
+      });
     } else {
       navigate("/cart");
     }
