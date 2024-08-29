@@ -12,8 +12,11 @@ import Orders from "./pages/Orders";
 import Navbar from "./components/Navbar";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
+import SearchBar from "./components/SearchBar";
+import { useShopContext } from "./context/ShopContext";
 
 function App() {
+  const { setShowSearch } = useShopContext();
   return (
     <div className="relative">
       <Navbar />

@@ -4,7 +4,7 @@ import Title from "../components/Title";
 import Card from "../components/Card";
 
 const Collection = () => {
-  const { products } = useShopContext();
+  const { products, showSearch, search } = useShopContext();
   const [showFilter, setShowFilter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
@@ -28,6 +28,12 @@ const Collection = () => {
 
   const applyFilter = () => {
     let allProducts = products.slice();
+
+    if (showSearch & (search.length > 0)) {
+      allProducts = allProducts.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase())
+      );
+    }
 
     if (category.length > 0) {
       allProducts = allProducts.filter((item) =>
@@ -61,14 +67,19 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory]);
+  }, [category, subCategory, search, showSearch]);
 
   useEffect(() => {
     sortProduct();
   }, [sortType]);
 
   return (
-    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
+    <div
+      className={`flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10  border-t ${
+        showSearch ? "mt-24" : ""
+      }
+      `}
+    >
       {/* filter option  */}
       <div className="min-w-60">
         <p
