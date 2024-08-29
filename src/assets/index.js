@@ -1,5 +1,23 @@
 export const products = [
   {
+    _id: "6683d3d47f779795ecfa98a3",
+    name: "Men Round Neck Pure Cotton T-shirt",
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    price: 80,
+    image: [
+      "/men_top_1_1.png",
+      "/men_top_1_2.png",
+      "/men_top_1_3.png",
+      "/men_top_1_4.png",
+    ],
+    category: "Men",
+    subCategory: "Topwear",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    date: 1716345448,
+    bestseller: true,
+  },
+  {
     _id: "6683d79e7f779795ecfa98d3",
     name: "Women Zip-Front Relaxed Fit Jacket",
     description:
@@ -354,24 +372,7 @@ export const products = [
     date: 1716345448,
     bestseller: false,
   },
-  {
-    _id: "6683d3d47f779795ecfa98a3",
-    name: "Men Round Neck Pure Cotton T-shirt",
-    description:
-      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-    price: 80,
-    image: [
-      "/men_top_1_1.png",
-      "/men_top_1_2.png",
-      "/men_top_1_3.png",
-      "/men_top_1_4.png",
-    ],
-    category: "Men",
-    subCategory: "Topwear",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    date: 1716345448,
-    bestseller: true,
-  },
+
   {
     _id: "6683da717f779795ecfa98fb",
     name: "Men Slim Fit Relaxed Denim Jacket",

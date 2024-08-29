@@ -10,10 +10,9 @@ import Login from "./pages/Login";
 import PlaceOrder from "./pages/PlaceOrder";
 import Orders from "./pages/Orders";
 import Navbar from "./components/Navbar";
-import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
-import SearchBar from "./components/SearchBar";
 import { useShopContext } from "./context/ShopContext";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   const { setShowSearch } = useShopContext();
@@ -31,7 +30,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/place-order" element={<PlaceOrder />} />
           <Route path="/orders" element={<Orders />} />
-          <Route path="*" element={<NotFound />} />{" "}
+          <Route path="*" element={<NotFoundPage />} />{" "}
         </Routes>
         <Toaster position="top-center" reverseOrder={false} />
       </div>
