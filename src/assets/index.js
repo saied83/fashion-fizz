@@ -1,5 +1,18 @@
 export const products = [
   {
+    _id: "6683d79e7f779795ecfa98d3",
+    name: "Women Zip-Front Relaxed Fit Jacket",
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    price: 82,
+    image: ["/women_winter_2.png"],
+    category: "Women",
+    subCategory: "Winterwear",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    date: 1716345448,
+    bestseller: true,
+  },
+  {
     _id: "6683d8467f779795ecfa98dd",
     name: "Men Round Neck Pure Cotton T-shirt",
     description:
@@ -9,6 +22,19 @@ export const products = [
     category: "Men",
     subCategory: "Topwear",
     sizes: ["S", "M", "L", "XL", "XXL"],
+    date: 1716345448,
+    bestseller: false,
+  },
+  {
+    _id: "6683da147f779795ecfa98f7",
+    name: "Women Zip-Front Relaxed Fit Jacket",
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    price: 78,
+    image: ["/women_winter_5.png"],
+    category: "Women",
+    subCategory: "Winterwear",
+    sizes: ["S", "XL", "XXL"],
     date: 1716345448,
     bestseller: false,
   },
@@ -26,18 +52,19 @@ export const products = [
     bestseller: false,
   },
   {
-    _id: "6683dadf7f779795ecfa9903",
-    name: "Kid Tapered Slim Fit Trouser",
+    _id: "6683d6057f779795ecfa98bf",
+    name: "Girls Round Neck Cotton Top",
     description:
       "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
     price: 40,
-    image: ["/kid_bottom_3.png"],
+    image: ["/kid_top_9.png"],
     category: "Kid",
-    subCategory: "Bottomwear",
+    subCategory: "Topwear",
     sizes: ["S", "M", "L", "XL", "XXL"],
     date: 1716345448,
     bestseller: false,
   },
+
   {
     _id: "6683da5f7f779795ecfa98f9",
     name: "Men Slim Fit Relaxed Denim Jacket",
@@ -46,6 +73,19 @@ export const products = [
     price: 86,
     image: ["/men_winter_3.png"],
     category: "Men",
+    subCategory: "Winterwear",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    date: 1716345448,
+    bestseller: false,
+  },
+  {
+    _id: "6683daf67f779795ecfa9905",
+    name: "Women Zip-Front Relaxed Fit Jacket",
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    price: 68,
+    image: ["/women_winter_6.png"],
+    category: "Women",
     subCategory: "Winterwear",
     sizes: ["S", "M", "L", "XL", "XXL"],
     date: 1716345448,
@@ -64,6 +104,20 @@ export const products = [
     date: 1716345448,
     bestseller: true,
   },
+  {
+    _id: "6683d4b27f779795ecfa98ab",
+    name: "Girls Round Neck Cotton Top",
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    price: 56,
+    image: ["/kid_top_12.png"],
+    category: "Kid",
+    subCategory: "Topwear",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    date: 1716345448,
+    bestseller: false,
+  },
+
   {
     _id: "6683d5417f779795ecfa98b3",
     name: "Men Tapered Fit Flat-Front Trousers",
@@ -90,19 +144,7 @@ export const products = [
     date: 1716345448,
     bestseller: false,
   },
-  {
-    _id: "6683d4b27f779795ecfa98ab",
-    name: "Girls Round Neck Cotton Top",
-    description:
-      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-    price: 56,
-    image: ["/kid_top_12.png"],
-    category: "Kid",
-    subCategory: "Topwear",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    date: 1716345448,
-    bestseller: false,
-  },
+
   {
     _id: "6683d8d17f779795ecfa98e5",
     name: "Women Zip-Front Relaxed Fit Jacket",
@@ -155,19 +197,7 @@ export const products = [
     date: 1716345448,
     bestseller: false,
   },
-  {
-    _id: "6683d79e7f779795ecfa98d3",
-    name: "Women Zip-Front Relaxed Fit Jacket",
-    description:
-      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-    price: 82,
-    image: ["/women_winter_2.png"],
-    category: "Women",
-    subCategory: "Winterwear",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    date: 1716345448,
-    bestseller: true,
-  },
+
   {
     _id: "6683d6887f779795ecfa98c5",
     name: "Boy Round Neck Pure Cotton T-shirt",
@@ -420,19 +450,7 @@ export const products = [
     date: 1716345448,
     bestseller: true,
   },
-  {
-    _id: "6683da147f779795ecfa98f7",
-    name: "Women Zip-Front Relaxed Fit Jacket",
-    description:
-      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-    price: 78,
-    image: ["/women_winter_5.png"],
-    category: "Women",
-    subCategory: "Winterwear",
-    sizes: ["S", "XL", "XXL"],
-    date: 1716345448,
-    bestseller: false,
-  },
+
   {
     _id: "6683d57d7f779795ecfa98b7",
     name: "Men Round Neck Pure Cotton T-shirt",
@@ -537,19 +555,7 @@ export const products = [
     date: 1716345448,
     bestseller: false,
   },
-  {
-    _id: "6683d6057f779795ecfa98bf",
-    name: "Girls Round Neck Cotton Top",
-    description:
-      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-    price: 40,
-    image: ["/kid_top_9.png"],
-    category: "Kid",
-    subCategory: "Topwear",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    date: 1716345448,
-    bestseller: false,
-  },
+
   {
     _id: "6683d9847f779795ecfa98ef",
     name: "Men Slim Fit Relaxed Denim Jacket",
@@ -576,19 +582,7 @@ export const products = [
     date: 1716345448,
     bestseller: false,
   },
-  {
-    _id: "6683daf67f779795ecfa9905",
-    name: "Women Zip-Front Relaxed Fit Jacket",
-    description:
-      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-    price: 68,
-    image: ["/women_winter_6.png"],
-    category: "Women",
-    subCategory: "Winterwear",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    date: 1716345448,
-    bestseller: false,
-  },
+
   {
     _id: "6683d6c47f779795ecfa98c9",
     name: "Women Zip-Front Relaxed Fit Jacket",
@@ -611,6 +605,19 @@ export const products = [
     image: ["/kid_top_6.png"],
     category: "Kid",
     subCategory: "Topwear",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    date: 1716345448,
+    bestseller: false,
+  },
+  {
+    _id: "6683dadf7f779795ecfa9903",
+    name: "Kid Tapered Slim Fit Trouser",
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    price: 40,
+    image: ["/kid_bottom_3.png"],
+    category: "Kid",
+    subCategory: "Bottomwear",
     sizes: ["S", "M", "L", "XL", "XXL"],
     date: 1716345448,
     bestseller: false,
