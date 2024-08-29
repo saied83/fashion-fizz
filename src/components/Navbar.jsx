@@ -6,7 +6,7 @@ import SearchBar from "../components/SearchBar";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { showSearch, setShowSearch } = useShopContext();
+  const { getCartCount, setShowSearch } = useShopContext();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -79,7 +79,7 @@ const Navbar = () => {
         <Link to="/cart" className="relative">
           <img src="/cart-icon.svg" alt="" className="w-5 min-w-5" />
           <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[10px] ">
-            10
+            {getCartCount()}
           </p>
         </Link>
         <img

@@ -1,15 +1,16 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useShopContext } from "../context/ShopContext";
 import { useEffect, useState } from "react";
-import NotFoundPage from "./NotFoundPage";
 import RelatedProducts from "../components/RelatedProducts";
+import toast from "react-hot-toast";
 
 const Product = () => {
   const { productId } = useParams();
-  const { products, currency } = useShopContext();
+  const { products, currency, addToCart, getCartCount } = useShopContext();
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
+  const navigate = useNavigate();
 
   const fetchProductData = async () => {
     products.map((product) => {
@@ -19,6 +20,14 @@ const Product = () => {
         return;
       }
     });
+  };
+
+  const handleCheckout = () => {
+    if (getCartCount() === 0) {
+      toast.error("Request Abroad");
+    } else {
+      navigate("/cart");
+    }
   };
 
   useEffect(() => {
@@ -84,9 +93,20 @@ const Product = () => {
               ))}
             </div>
           </div>
-          <button className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700">
-            ADD TO CART
-          </button>
+          <div className="flex gap-4">
+            <button
+              className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700"
+              onClick={() => addToCart(productData._id, size)}
+            >
+              ADD TO CART
+            </button>
+            <button
+              className="bg-white border-gray-700 border-2 text-black px-8 py-3 text-sm active:bg-gray-400 "
+              onClick={() => handleCheckout()}
+            >
+              VIEW CART
+            </button>
+          </div>
           <hr className="mt-8 sm:w-4/5" />
           <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
             <p>100% Original product.</p>

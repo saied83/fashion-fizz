@@ -5,7 +5,11 @@ import { Link } from "react-router-dom";
 const Card = ({ id, image, name, price }) => {
   const { currency } = useShopContext();
   return (
-    <Link className="text-gray-700 cursor-pointer" to={`/product/${id}`}>
+    <Link
+      className="text-gray-700 cursor-pointer"
+      to={`/product/${id}`}
+      onClick={window.scrollTo(0, 0)}
+    >
       <div className="overflow-hidden ">
         <img
           className="hover:scale-110 transition  ease-in-out "
