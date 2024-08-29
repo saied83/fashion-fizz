@@ -1,7 +1,3 @@
-export const assets = {
-  logo: "/logo.svg",
-};
-
 export const products = [
   {
     _id: "6683d8467f779795ecfa98dd",

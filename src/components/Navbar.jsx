@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { assets } from "../assets";
 import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -30,7 +29,7 @@ const Navbar = () => {
         } `}
       >
         <img
-          src={assets.logo}
+          src="/logo.svg"
           className="w-36 cursor-pointer"
           onClick={() => window.scrollTo(0, 0)}
           alt=""
