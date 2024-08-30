@@ -1,8 +1,12 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useAuthContext } from "../context/AuthContext";
+import { useShopContext } from "../context/ShopContext";
+import { useLocation } from "react-router-dom";
 
 const Auth = () => {
+  const { navigate } = useShopContext();
+  const location = useLocation();
   const [currentState, setCurrentState] = useState("Sign Up");
   // const [name, setName] = useState("Test User");
   // const [email, setEmail] = useState("test@user.com");
@@ -22,6 +26,7 @@ const Auth = () => {
       };
       localStorage.setItem("user-info", JSON.stringify(userData));
       setAuthUser(userData);
+      navigate(location?.state?.prevUrl);
     }
   };
   return (

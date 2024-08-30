@@ -5,6 +5,7 @@ import SearchBar from "../components/SearchBar";
 import Profile from "../pages/Profile";
 import Orders from "../pages/Orders";
 import useLogout from "../hooks/useLogout";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -75,7 +76,7 @@ const Navbar = () => {
             <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-[#fcf4f4] text-gray-500 rounded">
               <p
                 onClick={() => {
-                  navigate("/profile");
+                  toast("Profile is not available on Demo!", { icon: "⚠️" });
                 }}
                 className="cursor-pointer hover:text-black"
               >
@@ -92,7 +93,8 @@ const Navbar = () => {
               <p
                 onClick={() => {
                   logout();
-                  navigate("/collection");
+                  toast.success("Logout Successfully!");
+                  navigate("/");
                 }}
                 className="cursor-pointer hover:text-black"
               >

@@ -1,5 +1,5 @@
 import { Toaster } from "react-hot-toast";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Collection from "./pages/Collection";
 import About from "./pages/About";
@@ -19,6 +19,7 @@ import Profile from "./pages/Profile";
 function App() {
   const { setShowSearch } = useShopContext();
   const { authUser } = useAuthContext();
+  const location = useLocation();
   return (
     <div className="relative">
       <Navbar />
@@ -32,23 +33,56 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route
             path="/auth"
-            element={authUser ? <Navigate to="/collection" /> : <Auth />}
+            element={
+              authUser ? (
+                <Navigate
+                  to="/collection"
+                  state={{ prevUrl: location.pathname }}
+                />
+              ) : (
+                <Auth />
+              )
+            }
           />
           <Route
             path="/checkout"
-            element={authUser ? <Checkout /> : <Navigate to="/auth" />}
+            element={
+              authUser ? (
+                <Checkout />
+              ) : (
+                <Navigate to="/auth" state={{ prevUrl: location.pathname }} />
+              )
+            }
           />
           <Route
             path="/profile"
-            element={authUser ? <Profile /> : <Navigate to="/auth" />}
+            element={
+              authUser ? (
+                <Profile />
+              ) : (
+                <Navigate to="/auth" state={{ prevUrl: location.pathname }} />
+              )
+            }
           />
           <Route
             path="/profile/:userId"
-            element={authUser ? <Profile /> : <Navigate to="/auth" />}
+            element={
+              authUser ? (
+                <Profile />
+              ) : (
+                <Navigate to="/auth" state={{ prevUrl: location.pathname }} />
+              )
+            }
           />
           <Route
             path="/orders"
-            element={authUser ? <Orders /> : <Navigate to="/auth" />}
+            element={
+              authUser ? (
+                <Orders />
+              ) : (
+                <Navigate to="/auth" state={{ prevUrl: location.pathname }} />
+              )
+            }
           />
           <Route path="*" element={<NotFoundPage />} />{" "}
         </Routes>
