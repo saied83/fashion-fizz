@@ -2,12 +2,16 @@ import { useState, useEffect } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useShopContext } from "../context/ShopContext";
 import SearchBar from "../components/SearchBar";
+import Profile from "../pages/Profile";
+import Orders from "../pages/Orders";
+import useLogout from "../hooks/useLogout";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { getCartCount, setShowSearch } = useShopContext();
   const navigate = useNavigate();
+  const logout = useLogout();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,9 +73,31 @@ const Navbar = () => {
           <img src="/profile-icon.svg" alt="" className="cursor-pointer" />
           <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
             <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-[#fcf4f4] text-gray-500 rounded">
-              <p className="cursor-pointer hover:text-black">My Profile</p>
-              <p className="cursor-pointer hover:text-black">Orders</p>
-              <p className="cursor-pointer hover:text-black">Logout</p>
+              <p
+                onClick={() => {
+                  navigate("/profile");
+                }}
+                className="cursor-pointer hover:text-black"
+              >
+                My Profile
+              </p>
+              <p
+                onClick={() => {
+                  navigate("/orders");
+                }}
+                className="cursor-pointer hover:text-black"
+              >
+                Orders
+              </p>
+              <p
+                onClick={() => {
+                  logout();
+                  navigate("/collection");
+                }}
+                className="cursor-pointer hover:text-black"
+              >
+                Logout
+              </p>
             </div>
           </div>
         </div>

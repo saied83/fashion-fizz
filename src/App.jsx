@@ -1,21 +1,24 @@
 import { Toaster } from "react-hot-toast";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Collection from "./pages/Collection";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Product from "./pages/Product";
-import Login from "./pages/Login";
+import Auth from "./pages/Auth";
 import Checkout from "./pages/Checkout";
 import Orders from "./pages/Orders";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { useShopContext } from "./context/ShopContext";
 import NotFoundPage from "./pages/NotFoundPage";
+import { useAuthContext } from "./context/AuthContext";
+import Profile from "./pages/Profile";
 
 function App() {
   const { setShowSearch } = useShopContext();
+  const { authUser } = useAuthContext();
   return (
     <div className="relative">
       <Navbar />
@@ -27,9 +30,26 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/orders" element={<Orders />} />
+          <Route
+            path="/auth"
+            element={authUser ? <Navigate to="/collection" /> : <Auth />}
+          />
+          <Route
+            path="/checkout"
+            element={authUser ? <Checkout /> : <Navigate to="/auth" />}
+          />
+          <Route
+            path="/profile"
+            element={authUser ? <Profile /> : <Navigate to="/auth" />}
+          />
+          <Route
+            path="/profile/:userId"
+            element={authUser ? <Profile /> : <Navigate to="/auth" />}
+          />
+          <Route
+            path="/orders"
+            element={authUser ? <Orders /> : <Navigate to="/auth" />}
+          />
           <Route path="*" element={<NotFoundPage />} />{" "}
         </Routes>
         <Toaster position="top-center" reverseOrder={false} />
