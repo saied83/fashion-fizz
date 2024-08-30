@@ -97,7 +97,12 @@ const Cart = () => {
               onClick={() => {
                 if (getCartAmount() === 0) {
                   toast.error("No Product Selected");
-                  setTimeout(() => navigate("/collection"), 1000);
+                  setTimeout(() => {
+                    navigate("/collection");
+                    toast("Select Any Product", {
+                      icon: "⚠️",
+                    });
+                  }, 1000);
                 } else {
                   navigate("/checkout");
                 }

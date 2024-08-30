@@ -6,6 +6,7 @@ import Profile from "../pages/Profile";
 import Orders from "../pages/Orders";
 import useLogout from "../hooks/useLogout";
 import toast from "react-hot-toast";
+import { useAuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -13,6 +14,7 @@ const Navbar = () => {
   const { getCartCount, setShowSearch } = useShopContext();
   const navigate = useNavigate();
   const logout = useLogout();
+  const { authUser } = useAuthContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,12 +95,10 @@ const Navbar = () => {
               <p
                 onClick={() => {
                   logout();
-                  toast.success("Logout Successfully!");
-                  navigate("/");
                 }}
                 className="cursor-pointer hover:text-black"
               >
-                Logout
+                {authUser ? "Logout" : "Login"}
               </p>
             </div>
           </div>

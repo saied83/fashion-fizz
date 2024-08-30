@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 const Auth = () => {
   const { navigate } = useShopContext();
   const location = useLocation();
-  const [currentState, setCurrentState] = useState("Sign Up");
+  const [currentState, setCurrentState] = useState("Login");
   // const [name, setName] = useState("Test User");
   // const [email, setEmail] = useState("test@user.com");
   // const [password, setPassword] = useState("password");
