@@ -2,7 +2,11 @@
 
 ================
 
-A modern e-commerce clothing website built with React, React Router, Tailwind CSS, and Context API. For live demo <a href="https://fashion-fizz.vercel.app/">CLICK HERE.</a>
+A modern e-commerce clothing website built with React, React Router, Tailwind CSS, and Context API.
+
+### Live Demo
+
+<a href="https://fashion-fizz.vercel.app/">CLICK HERE.</a>
 
 ##
 
